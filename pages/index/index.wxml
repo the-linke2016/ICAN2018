@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<import src="../../template/template.wxml" />
+
+<view wx:if="{{ pageIndex==0 }}" class="main">
+  <view class="container">
+    <view class="userinfo">
+      <button wx:if="{{ !hasUserInfo && canIUse }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
+      </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" mode="cover"></image>
+        <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+      </block>
+    </view>
+    <view class="scanResult">
+      <text class="" selectable="false" space="false" decode="false">
+        该物品价值积分：{{ points }}
+      </text>
+    </view>
+  </view>
+  <view class="buttons">
+    <van-button type="primary" bindclick="getPoints">{{ recognizeBtn }}</van-button>
+    <van-button type="warning" bindclick="addMyPoints">存入钱包</van-button>
+  </view>
+</view>
+
+<view wx:if="{{ pageIndex==1 }}" class="shop">
+  <template is="list_index_items_tmpl" data="{{...list_index_items_tmpl}}" />
+</view>
+
+<view wx:if="{{ pageIndex==2 }}" class="me">
+  <text>我的昵称：{{ userInfo.nickName }}</text>
+  <text>我的积分：{{ myPoints }}</text>
+</view>
+
+<van-tabbar class="tabbars" active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="password-view">首页</van-tabbar-item>
+  <van-tabbar-item icon="exchange-record">兑换</van-tabbar-item>
+  <van-tabbar-item icon="contact" dot>我</van-tabbar-item>
+</van-tabbar>

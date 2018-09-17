@@ -1,0 +1,99 @@
+/*列表*/
+view.text {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px 10px 12px;
+    font-size: 15px;
+    color: #656565;
+}
+
+view.text:before {
+    position: absolute;
+    display: block;
+    content: ' ';
+    left: -5px;
+    width: 2px;
+    height: 100%;
+    background-color: #09bb07;
+}
+
+.line_y {
+    width: 3px;
+    height: 100%;
+    height: 18px;
+    display: inline-block;
+    background-color: #09bb07;
+}
+
+view.text text {
+    margin-left: 10px;
+    line-height: 18px;
+}
+
+.item {
+    padding: 8px;
+    background-color: #fff;
+    border-top: 1px solid #e4e4e4;
+    color: #787878;
+}
+
+.item image {
+    display: block;
+    width: 129px;
+    height: 114px;
+}
+
+.item-right {
+    margin-left: 11px;
+}
+
+.title {
+    margin-bottom: 25px;
+}
+
+.title text {
+    font-size: 16px;
+    color: #787878;
+}
+
+text {
+    font-size: 15px;
+    color: #444;
+}
+
+.c-1 {
+    color: #09bb07;
+}
+
+/**
+ * layout
+ *
+ * 说明
+ * l:layout
+ * r:row
+ * l:left
+ * r:right
+ * c:center
+ */
+.l-r {
+    display: flex;
+}
+
+/*l_auto:占用剩下的*/
+.l_auto {
+    flex: 1;
+}
+
+.l-c {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+/*垂直水平居中对齐*/
+.l-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
