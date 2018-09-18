@@ -8,7 +8,7 @@
             <view class="l_auto item-right">
                 <view class="title"><text>{{item.title}}</text></view>
                 <text>{{item.quantity}}{{item.unit}}/份</text>
-                <text class="c-1">￥{{item.price/100}}</text>
+                <text class="c-1">{{item.price}}</text>
             </view>
         </view>
     </block>
